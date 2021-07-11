@@ -10,7 +10,7 @@ var path = require('path');
 // var stripe = require('stripe')(process.env.STRIP_SECRET_KEY); 
 
 var app = express();
-var port = process.env.PORT || 5000;
+var port = process.env.PORT || 3001;
 
 // app.use(compression());
 // app.use(bodyParser.json());
