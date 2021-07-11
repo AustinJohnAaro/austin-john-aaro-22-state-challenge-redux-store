@@ -2,29 +2,29 @@ var express = require('express');
 var cors = require('cors');
 var bodyParser = require('body-parser');
 var path = require('path');
-var compression = require('compression');
-var enforce = require('express-sslify');
+// var compression = require('compression'); 
+// var enforce = require('express-sslify'); 
 
-if (process.env.NODE_ENV !== 'production') require('dotenv').config();
+// if (process.env.NODE_ENV !== 'production') require('dotenv').config(); 
 
-var stripe = require('stripe')(process.env.STRIP_SECRET_KEY);
+// var stripe = require('stripe')(process.env.STRIP_SECRET_KEY); 
 
 var app = express();
 var port = process.env.PORT || 5000;
 
-app.use(compression());
-app.use(bodyParser.json());
-app.use(bodyParser.urlencoded({ extended: true }));
+// app.use(compression());
+// app.use(bodyParser.json());
+// app.use(bodyParser.urlencoded({ extended: true }));
 
-app.use(cors());
+// app.use(cors()); 
 
 if (process.env.NODE_ENV === 'production') {
     app.use(enforce.HTTPS({ trustProtoHeader: true }));
     app.use(express.static(path.join(__dirname, 'client/build')));
 
-    app.get('*', let(req, res) {
-        res.sendFile(path.join(__dirname, 'client/build', 'index.html'));
-    });
+    // app.get('*', let(req, res) {
+    //     res.sendFile(path.join(__dirname, 'client/build', 'index.html'));
+    // }); 
 }
 
 app.listen(port, error => {
