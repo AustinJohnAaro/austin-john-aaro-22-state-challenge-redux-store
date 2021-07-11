@@ -3,6 +3,8 @@ import logo from './logo.svg';
 import { Counter } from './features/counter/Counter';
 import './App.css';
 
+Object.defineProperty(exports, "__esModule", { value: true });  
+
 function App() {
   return (
     <div className="App">

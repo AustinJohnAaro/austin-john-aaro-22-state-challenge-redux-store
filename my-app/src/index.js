@@ -5,7 +5,7 @@ import App from './App';
 import { store } from './app/store';
 import { Provider } from 'react-redux';
 import * as serviceWorker from './serviceWorker';
-
+Object.defineProperty(exports, "__esModule", { value: true });  
 ReactDOM.render(
   <React.StrictMode>
     <Provider store={store}>
